@@ -41,7 +41,7 @@ git push -u origin main
 
 Cambiá `TU-USUARIO` por tu usuario de GitHub.
 
-> Si preferís no usar comandos: en la página del repositorio recién creado hay un enlace **"uploading an existing file"**. Arrastrá ahí todos los archivos de esta carpeta (incluida la carpeta `assets` completa) y listo.
+> Si preferís no usar comandos: en la página del repositorio recién creado hay un enlace **"uploading an existing file"**. Abrí esta carpeta, seleccioná todo con **Ctrl+A** y arrastralo ahí. Como no hay subcarpetas, no se puede perder nada por el camino.
 
 ### 3. Publicar en Vercel
 
