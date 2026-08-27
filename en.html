@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Menu · AzuMar</title>
+<meta name="description" content="Menu of AzuMar Restaurant and Seafood House in Quepos, Costa Rica. Ceviches, seafood, rice dishes, steaks, pasta and more. All applicable taxes included.">
+<meta name="theme-color" content="#001A3E">
+<link rel="alternate" hreflang="es" href="es.html">
+<link rel="alternate" hreflang="en" href="en.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="AzuMar Menu">
+<meta property="og:description" content="AzuMar Restaurant and Seafood House — Quepos, Costa Rica.">
+<meta property="og:image" content="assets/logo.webp">
+
+<link rel="icon" href="assets/logo.webp">
+<link rel="apple-touch-icon" href="assets/logo.webp">
+<link rel="stylesheet" href="assets/menu.css">
+<link rel="preload" as="image" href="assets/en/01.webp">
+</head>
+<body>
+
+<header>
+  <a href="index.html" aria-label="Back to start">
+    <img class="logo" src="assets/logo.webp" alt="AzuMar" width="32" height="32">
+  </a>
+  <span class="marca">Menu</span>
+  <div class="acciones">
+    <a class="pastilla" href="es.html" hreflang="es" aria-label="Cambiar el menú a español">
+      <span aria-hidden="true">🇨🇷</span> Español
+    </a>
+  </div>
+</header>
+
+<nav class="secciones" id="secciones" role="tablist" aria-label="Menu sections"></nav>
+
+<main class="visor" id="visor" aria-live="polite"></main>
+
+<p class="pista">Tap a section · swipe to browse</p>
+
+<script>
+  window.MENU = {
+    carpeta: "en",
+    // Same page order as the printed menu
+    secciones: [
+      { id: "cover",     nombre: "Cover",            pagina: 1 },
+      { id: "starters",  nombre: "Starters",         pagina: 2 },
+      { id: "fastfood",  nombre: "Sea Fast Food",    pagina: 3 },
+      { id: "mains",     nombre: "Main Dishes",      pagina: 4 },
+      { id: "steaks",    nombre: "Steaks & Pasta",   pagina: 5 },
+      { id: "lunch",     nombre: "Lunch Specials",   pagina: 6 },
+      { id: "smoothies", nombre: "Smoothies",        pagina: 7 },
+      { id: "drinks",    nombre: "Drinks & Kids",    pagina: 8 },
+    ],
+    textos: { pagina: "Menu page" },
+  };
+</script>
+<script src="assets/menu.js"></script>
+</body>
+</html>
