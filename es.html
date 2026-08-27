@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es-CR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Menú · AzuMar</title>
+<meta name="description" content="Menú del Restaurante y Marisquería AzuMar en Quepos, Costa Rica. Ceviches, mariscos, arroces, cortes, pastas y más. Impuestos ya incluidos.">
+<meta name="theme-color" content="#001A3E">
+<link rel="alternate" hreflang="en" href="en.html">
+<link rel="alternate" hreflang="es" href="es.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Menú AzuMar">
+<meta property="og:description" content="Restaurante y Marisquería AzuMar — Quepos, Costa Rica.">
+<meta property="og:image" content="assets/logo.webp">
+
+<link rel="icon" href="assets/logo.webp">
+<link rel="apple-touch-icon" href="assets/logo.webp">
+<link rel="stylesheet" href="assets/menu.css">
+<link rel="preload" as="image" href="assets/es/01.webp">
+</head>
+<body>
+
+<header>
+  <a href="index.html" aria-label="Volver al inicio">
+    <img class="logo" src="assets/logo.webp" alt="AzuMar" width="32" height="32">
+  </a>
+  <span class="marca">Menú</span>
+  <div class="acciones">
+    <a class="pastilla" href="en.html" hreflang="en" aria-label="Switch menu to English">
+      <span aria-hidden="true">🇺🇸</span> English
+    </a>
+  </div>
+</header>
+
+<nav class="secciones" id="secciones" role="tablist" aria-label="Secciones del menú"></nav>
+
+<main class="visor" id="visor" aria-live="polite"></main>
+
+<p class="pista">Tocá una sección · deslizá para hojear</p>
+
+<script>
+  window.MENU = {
+    carpeta: "es",
+    // El orden es el de las páginas del menú impreso
+    secciones: [
+      { id: "portada",   nombre: "Portada",             pagina: 1 },
+      { id: "entradas",  nombre: "Entradas",            pagina: 2 },
+      { id: "fastfood",  nombre: "Sea Fast Food",       pagina: 3 },
+      { id: "principales", nombre: "Platos fuertes",    pagina: 4 },
+      { id: "carnes",    nombre: "Carnes y pastas",     pagina: 5 },
+      { id: "ejecutivo", nombre: "Ejecutivo",           pagina: 6 },
+      { id: "batidos",   nombre: "Batidos",             pagina: 7 },
+      { id: "bebidas",   nombre: "Bebidas e infantil",  pagina: 8 },
+    ],
+    textos: { pagina: "Página del menú" },
+  };
+</script>
+<script src="assets/menu.js"></script>
+</body>
+</html>
