@@ -82,9 +82,21 @@ Si las imágenes nuevas pesan mucho (más de 500 KB cada una), conviene pasarlas
 
 Todos los archivos van **sueltos en la raíz, sin carpetas**. Es a propósito:
 cuando se suben archivos a GitHub arrastrándolos, las subcarpetas se pierden
-y el sitio queda sin estilos ni imágenes. Así no puede fallar.
+y el sitio queda sin estilos ni imágenes. Plano no puede fallar así.
 
-\
+```
+index.html                  Bienvenida y elección de idioma
+es.html                     Menú en español
+en.html                     Menú en inglés
+menu.css                    Estilos
+menu.js                     Secciones y deslizar
+logo.webp                   Logo de AzuMar
+es-01.webp … es-08.webp     Páginas del menú en español
+en-01.webp … en-08.webp     Páginas del menú en inglés
+vercel.json                 Configuración de publicación
+ABRIR-MENU.cmd              Doble clic para verlo en tu navegador
+```
+
 No hace falta instalar nada ni compilar: es HTML, CSS y JavaScript puros.
 
 ---
