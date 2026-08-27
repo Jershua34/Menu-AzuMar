@@ -6,7 +6,11 @@
  * pasar páginas, llega queriendo encontrar algo.
  *
  * Cada idioma tiene su HTML pero comparten este archivo. La página declara:
- *   window.MENU = { carpeta: "es", secciones: [{nombre, pagina}, ...], textos }
+ *   window.MENU = { idioma: "es", secciones: [{nombre, pagina}, ...], textos }
+ *
+ * Todos los archivos viven sueltos en la raíz, sin carpetas, a propósito:
+ * subir archivos a GitHub arrastrándolos pierde las subcarpetas, y sin ellas
+ * el sitio queda sin estilos ni imágenes. Plano no se puede romper así.
  */
 (function () {
   const cfg = window.MENU;
@@ -20,9 +24,9 @@
   const imagenes = [];
   const chips = [];
 
-  /** Ruta de la imagen de una página (0 -> assets/es/01.webp). */
+  /** Ruta de la imagen de una página (0 -> es-01.webp). */
   const ruta = (i) =>
-    `assets/${cfg.carpeta}/${String(i + 1).padStart(2, "0")}.webp`;
+    `${cfg.idioma}-${String(i + 1).padStart(2, "0")}.webp`;
 
   // --- Imágenes ---
   cfg.secciones.forEach((sec, i) => {

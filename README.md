@@ -63,10 +63,10 @@ En Vercel: **Settings → Domains → Add**. Si comprás algo como `menuazumar.c
 Las páginas del menú son imágenes. Para actualizarlas:
 
 1. Exportá cada página del menú nuevo como imagen
-2. Reemplazá los archivos en `assets/es/` (01.webp a 08.webp) y `assets/en/`
+2. Reemplazá los archivos `es-01.webp` a `es-08.webp` (y `en-01.webp` a `en-08.webp`)
 3. Subí el cambio a GitHub — Vercel lo publica solo en un minuto
 
-**Importante:** los nombres tienen que quedar igual (`01.webp`, `02.webp`, …) y en orden, porque cada sección apunta a un número de página.
+**Importante:** los nombres tienen que quedar igual (`es-01.webp`, `es-02.webp`, …) y en orden, porque cada sección apunta a un número de página.
 
 Si el menú cambia de secciones o de cantidad de páginas, hay que ajustar la lista `secciones` que está al final de `es.html` y `en.html`. Cada línea dice el nombre que se muestra y a qué página lleva:
 
@@ -80,21 +80,11 @@ Si las imágenes nuevas pesan mucho (más de 500 KB cada una), conviene pasarlas
 
 ## Estructura
 
-```
-azumar-menu/
-├── index.html          Bienvenida y elección de idioma
-├── es.html             Menú en español
-├── en.html             Menú en inglés
-├── vercel.json         Configuración de publicación
-├── assets/
-│   ├── logo.webp       Logo de AzuMar
-│   ├── menu.css        Estilos del visor
-│   ├── menu.js         Paso de páginas, deslizar, teclado
-│   ├── es/01..08.webp  Páginas del menú en español
-│   └── en/01..08.webp  Páginas del menú en inglés
-└── README.md
-```
+Todos los archivos van **sueltos en la raíz, sin carpetas**. Es a propósito:
+cuando se suben archivos a GitHub arrastrándolos, las subcarpetas se pierden
+y el sitio queda sin estilos ni imágenes. Así no puede fallar.
 
+\
 No hace falta instalar nada ni compilar: es HTML, CSS y JavaScript puros.
 
 ---
