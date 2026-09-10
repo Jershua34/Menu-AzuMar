@@ -26,6 +26,10 @@
     --paper:#F4EFE4;
   }
   *{box-sizing:border-box;margin:0;padding:0}
+  /* Un elemento con `hidden` NO se ve, y punto. Sin esto, cualquier regla de
+     clase con display:flex le gana al hidden del navegador: las opciones de
+     idioma del Express salían abiertas desde el principio. */
+  [hidden]{display:none !important}
   html{-webkit-text-size-adjust:100%}
   body{
     /* Alto exacto de la pantalla, no mínimo: así nada queda por debajo del
@@ -60,7 +64,7 @@
   /* display:contents deja que los hijos sean los que se reparten el alto,
      así que el z-index se le pone a cada uno, no al envoltorio. */
   .contenido{display:contents}
-  .franja-logo,.bloque-texto,.idiomas,.estado,.pie{position:relative;z-index:2}
+  .franja-logo,.bloque-texto,.idiomas,.bloque-express,.estado,.pie{position:relative;z-index:2}
 
   /* El logo trae su propio fondo azul marino, casi igual al de la página.
      Por eso va sin marco ni recorte: se funde con el fondo y se lee como
@@ -69,15 +73,29 @@
      Va en una franja flexible: es lo ÚNICO que cede espacio. Si la pantalla
      es bajita el logo se achica, pero los textos y los botones de idioma
      nunca quedan cortados — que era justo el problema. */
+  /* La franja NO se queda con todo el espacio sobrante: si lo hace, en un
+     teléfono alto el logo se ve chiquito en medio de un hueco enorme y los
+     textos quedan apretados abajo. Con flex:0 1 auto el grupo entero se
+     centra, y el logo sigue siendo lo ÚNICO que se encoge cuando la pantalla
+     es bajita, que era el problema original. */
   .franja-logo{
+    /* Crece con el espacio que sobre, PERO no más de lo que el logo puede
+       ocupar: el logo es cuadrado y su ancho está topado en 62vw, así que
+       más alto que eso solo sería hueco. Ese hueco era lo que se veía en el
+       teléfono. Y sigue encogiendo cuando la pantalla es bajita, que es lo
+       que evita que los botones queden cortados. */
     flex:1 1 auto;
     min-height:0;
+    max-height:min(300px,62vw,40vh);
     display:flex;align-items:center;justify-content:center;
     width:100%;
   }
   .logo{
+    /* El tope de alto va atado a SU FRANJA (100%), no a la pantalla. Atado
+       a vh, cuando la franja se encogía el logo no la seguía: se salía por
+       arriba y por abajo y se le montaba al texto. */
     max-height:100%;
-    max-width:min(260px,68vw);
+    max-width:min(300px,62vw);
     width:auto;height:auto;display:block;
     object-fit:contain;
     filter:drop-shadow(0 14px 32px rgba(0,0,0,.55));
@@ -138,6 +156,43 @@
   .estado::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
   .estado.abierto{color:#8FD694;border-color:rgba(143,214,148,.35)}
 
+  /* Express: se ve claro, pero no le compite al menú. Quien escanea el QR
+     en la mesa quiere la carta; quien pide a la casa busca esto. */
+  .bloque-express{
+    display:flex;flex-direction:column;align-items:center;
+    gap:clamp(7px,1.2vh,10px);
+    width:min(340px,100%);
+  }
+  .boton-express{
+    display:flex;align-items:center;justify-content:center;gap:9px;
+    width:100%;
+    padding:clamp(10px,1.7vh,14px) 20px;
+    font-size:14.5px;font-weight:600;letter-spacing:.02em;
+    font-family:inherit;
+    color:var(--gold);
+    background:none;
+    border:1px dashed rgba(214,169,59,.55);
+    border-radius:999px;
+    cursor:pointer;
+    transition:background .16s ease,border-color .16s ease;
+  }
+  .boton-express:hover{background:rgba(214,169,59,.12);border-color:var(--gold)}
+  .boton-express:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+  .boton-express[aria-expanded="true"]{border-style:solid;background:rgba(214,169,59,.1)}
+  .moto{font-size:18px;line-height:1}
+
+  .idiomas-express{display:flex;gap:8px;width:100%}
+  .idiomas-express a{
+    flex:1;
+    padding:11px 10px;
+    font-size:13.5px;font-weight:600;
+    color:var(--navy);background:var(--gold);
+    text-decoration:none;text-align:center;
+    border-radius:999px;
+  }
+  .idiomas-express a:hover{background:var(--gold-soft)}
+  .idiomas-express a:focus-visible{outline:2px solid var(--paper);outline-offset:2px}
+
   .pie{
     font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;
     color:rgba(244,239,228,.45);
@@ -145,6 +200,13 @@
   }
   .pie a{color:var(--gold-soft);text-decoration:none}
   .pie a:hover{text-decoration:underline}
+
+  /* En pantallas muy bajitas ya no queda sitio para el logo sin apretar los
+     botones. Un logo de 16px parece un error, no una marca: mejor quitarlo y
+     dejar el espacio para lo que el cliente necesita tocar. */
+  @media (max-height:540px){
+    .franja-logo{display:none}
+  }
 
   @media (prefers-reduced-motion:reduce){
     .idiomas a{transition:none}
@@ -174,6 +236,18 @@
       </a>
     </nav>
 
+    <div class="bloque-express">
+      <button class="boton-express" id="boton-express" type="button"
+              aria-expanded="false" aria-controls="idiomas-express">
+        <span class="moto" aria-hidden="true">🛵</span>
+        Pedir Express · Order delivery
+      </button>
+      <div class="idiomas-express" id="idiomas-express" hidden>
+        <a href="express.html" hreflang="es">Español</a>
+        <a href="express-en.html" hreflang="en">English</a>
+      </div>
+    </div>
+
     <p class="estado" id="estado" hidden></p>
 
     <p class="pie">
@@ -201,6 +275,18 @@
     } catch (e) {
       /* navegador sin husos horarios: mejor no decir nada que mentir */
     }
+  })();
+
+  // Express: un solo toque y lo único que pregunta es el idioma.
+  (function () {
+    var boton = document.getElementById("boton-express");
+    var opciones = document.getElementById("idiomas-express");
+    boton.addEventListener("click", function () {
+      var abierto = boton.getAttribute("aria-expanded") === "true";
+      boton.setAttribute("aria-expanded", abierto ? "false" : "true");
+      opciones.hidden = abierto;
+      if (!abierto) opciones.querySelector("a").focus();
+    });
   })();
 </script>
 </body>

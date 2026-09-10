@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es-CR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pedido Express · AzuMar</title>
+<meta name="description" content="Pedí Express del Restaurante y Marisquería AzuMar en Quepos. Tocá los platos, confirmá y el pedido se manda por WhatsApp.">
+<meta name="theme-color" content="#001A3E">
+<link rel="alternate" hreflang="en" href="express-en.html">
+<link rel="alternate" hreflang="es" href="express.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pedido Express · AzuMar">
+<meta property="og:description" content="Restaurante y Marisquería AzuMar, Quepos, Costa Rica.">
+<meta property="og:image" content="logo.webp">
+
+<link rel="icon" href="logo.webp">
+<link rel="apple-touch-icon" href="logo.webp">
+<link rel="stylesheet" href="menu.css">
+</head>
+<body>
+
+<div class="barra-fija">
+<header>
+  <a href="index.html" aria-label="Volver al inicio">
+    <img class="logo" src="logo.webp" alt="AzuMar" width="32" height="32">
+  </a>
+  <span class="marca">Express</span>
+  <div class="acciones">
+    <a class="pastilla" href="express-en.html" hreflang="en" aria-label="Switch to English">
+      <span aria-hidden="true">🇺🇸</span> English
+    </a>
+  </div>
+</header>
+
+<nav class="secciones" id="secciones" role="tablist" aria-label="Categorías del menú"></nav>
+</div>
+
+<p class="pista">Tocá los platos que querés · se van sumando abajo</p>
+
+<main id="lista"></main>
+
+<footer class="pie-info">
+  <p class="impuestos">
+    Los precios ya llevan impuestos incluidos.<br>
+    Entrega Express todos los días de 12 md a 11 pm.
+  </p>
+  <a class="ver-carta" href="es.html">Ver la carta con fotos</a>
+</footer>
+
+<!-- Barra del pedido: aparece sola en cuanto hay algo elegido -->
+<div class="carrito" id="carrito" hidden>
+  <span class="resumen" id="resumen"></span>
+  <button class="boton-pedir" id="ver-pedido" type="button">Ver pedido</button>
+</div>
+
+<dialog id="modal" aria-labelledby="titulo-modal">
+  <form method="dialog" class="cerrar-fila">
+    <h2 id="titulo-modal">Confirmá tu pedido</h2>
+    <button class="cerrar" id="cerrar" type="button" aria-label="Cerrar">✕</button>
+  </form>
+
+  <div class="detalle" id="detalle"></div>
+
+  <p class="total-fila"><span>Total</span> <strong id="total-modal"></strong></p>
+
+  <form id="formulario" novalidate>
+    <label>
+      Nombre
+      <input name="nombre" type="text" autocomplete="name" required placeholder="Tu nombre">
+    </label>
+    <label>
+      Teléfono
+      <input name="telefono" type="tel" inputmode="tel" autocomplete="tel" required placeholder="8888-8888">
+    </label>
+    <label>
+      Dirección de entrega
+      <input name="direccion" type="text" autocomplete="street-address" required placeholder="200 m sur de la iglesia, casa azul">
+    </label>
+    <label>
+      Observaciones <span class="opcional">(opcional)</span>
+      <textarea name="observaciones" rows="2" placeholder="Sin cebolla, bien cocido…"></textarea>
+    </label>
+
+    <p class="aviso" id="aviso" role="alert"></p>
+
+    <button class="boton-pedir" type="submit">Enviar por WhatsApp</button>
+    <p class="letra-chica">
+      Se abre tu WhatsApp con el pedido ya escrito. Vos lo enviás, y AzuMar te
+      contesta por ahí mismo para confirmarte.
+    </p>
+    <button class="vaciar" id="vaciar" type="button">Vaciar el pedido</button>
+  </form>
+</dialog>
+
+<script>
+  window.EXPRESS = {
+    idioma: "es",
+    textos: {
+      segunPeso: "según peso",
+      plato: "plato",
+      platos: "platos",
+      agregarUno: "Agregar uno de",
+      quitarUno: "Quitar uno de",
+      pedidoVacio: "Todavía no elegiste ningún plato.",
+      faltanDatos: "Falta el nombre o la dirección de entrega.",
+      telefonoCorto: "Revisá el teléfono: faltan números.",
+      confirmarVaciar: "¿Seguro que querés borrar todo el pedido?",
+    },
+  };
+</script>
+<script src="platos.js"></script>
+<script src="express.js"></script>
+</body>
+</html>

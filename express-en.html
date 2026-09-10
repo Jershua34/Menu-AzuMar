@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Express Order · AzuMar</title>
+<meta name="description" content="Order delivery from AzuMar Restaurant and Seafood House in Quepos. Tap the dishes, confirm, and your order is sent over WhatsApp.">
+<meta name="theme-color" content="#001A3E">
+<link rel="alternate" hreflang="es" href="express.html">
+<link rel="alternate" hreflang="en" href="express-en.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Express Order · AzuMar">
+<meta property="og:description" content="AzuMar Restaurant and Seafood House, Quepos, Costa Rica.">
+<meta property="og:image" content="logo.webp">
+
+<link rel="icon" href="logo.webp">
+<link rel="apple-touch-icon" href="logo.webp">
+<link rel="stylesheet" href="menu.css">
+</head>
+<body>
+
+<div class="barra-fija">
+<header>
+  <a href="index.html" aria-label="Back to the start">
+    <img class="logo" src="logo.webp" alt="AzuMar" width="32" height="32">
+  </a>
+  <span class="marca">Express</span>
+  <div class="acciones">
+    <a class="pastilla" href="express.html" hreflang="es" aria-label="Cambiar a español">
+      <span aria-hidden="true">🇨🇷</span> Español
+    </a>
+  </div>
+</header>
+
+<nav class="secciones" id="secciones" role="tablist" aria-label="Menu categories"></nav>
+</div>
+
+<p class="pista">Tap the dishes you want · they add up at the bottom</p>
+
+<main id="lista"></main>
+
+<footer class="pie-info">
+  <p class="impuestos">
+    All applicable taxes are already included.<br>
+    Delivery every day from 12 pm to 11 pm.
+  </p>
+  <a class="ver-carta" href="en.html">See the menu with photos</a>
+</footer>
+
+<!-- The order bar shows up on its own as soon as something is picked -->
+<div class="carrito" id="carrito" hidden>
+  <span class="resumen" id="resumen"></span>
+  <button class="boton-pedir" id="ver-pedido" type="button">View order</button>
+</div>
+
+<dialog id="modal" aria-labelledby="titulo-modal">
+  <form method="dialog" class="cerrar-fila">
+    <h2 id="titulo-modal">Confirm your order</h2>
+    <button class="cerrar" id="cerrar" type="button" aria-label="Close">✕</button>
+  </form>
+
+  <div class="detalle" id="detalle"></div>
+
+  <p class="total-fila"><span>Total</span> <strong id="total-modal"></strong></p>
+
+  <form id="formulario" novalidate>
+    <label>
+      Name
+      <input name="nombre" type="text" autocomplete="name" required placeholder="Your name">
+    </label>
+    <label>
+      Phone
+      <input name="telefono" type="tel" inputmode="tel" autocomplete="tel" required placeholder="8888-8888">
+    </label>
+    <label>
+      Delivery address
+      <input name="direccion" type="text" autocomplete="street-address" required placeholder="Hotel name and room, or street address">
+    </label>
+    <label>
+      Notes <span class="opcional">(optional)</span>
+      <textarea name="observaciones" rows="2" placeholder="No onion, well done…"></textarea>
+    </label>
+
+    <p class="aviso" id="aviso" role="alert"></p>
+
+    <button class="boton-pedir" type="submit">Send on WhatsApp</button>
+    <p class="letra-chica">
+      Your WhatsApp opens with the order already written. You send it, and
+      AzuMar replies there to confirm. The order is sent in Spanish so the
+      kitchen reads it straight away.
+    </p>
+    <button class="vaciar" id="vaciar" type="button">Clear the order</button>
+  </form>
+</dialog>
+
+<script>
+  window.EXPRESS = {
+    idioma: "en",
+    textos: {
+      segunPeso: "by weight",
+      plato: "dish",
+      platos: "dishes",
+      agregarUno: "Add one",
+      quitarUno: "Remove one",
+      pedidoVacio: "You have not picked any dish yet.",
+      faltanDatos: "Your name or the delivery address is missing.",
+      telefonoCorto: "Check the phone number: some digits are missing.",
+      confirmarVaciar: "Clear the whole order?",
+    },
+  };
+</script>
+<script src="platos.js"></script>
+<script src="express.js"></script>
+</body>
+</html>
