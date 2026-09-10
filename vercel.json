@@ -8,9 +8,10 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
+          "value": "public, max-age=3600, must-revalidate"
         }
-      ]
+      ],
+      "_comentario": "Las paginas de la carta se llaman siempre igual (es-01.webp). Con \"immutable\" el navegador NO revalidaba ni recargando, y un cliente que ya escaneo el QR se quedaba con los precios viejos hasta un anio. Ahora revalida cada hora: si no cambio nada el servidor responde 304 y no baja nada, asi que no cuesta datos."
     }
   ]
 }

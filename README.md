@@ -58,6 +58,29 @@ En Vercel: **Settings → Domains → Add**. Si comprás algo como `menuazumar.c
 
 ---
 
+## AVISO IMPORTANTE: los precios viven en DOS sitios
+
+Esto es lo que más fácil se olvida, y es lo que hace que un cliente pague de menos.
+
+| Dónde | Qué es | Quién lo ve |
+|---|---|---|
+| Las imágenes `es-01.webp` … `en-08.webp` | Las fotos de la carta | Quien lee el menú |
+| El archivo **`platos.js`** | La lista de platos y precios del **pedido Express** | Quien pide a domicilio |
+
+**Si cambiás los precios, hay que cambiar los dos.** Si solo reemplazás las
+imágenes, el menú muestra el precio nuevo y el Express le sigue cobrando el
+viejo a la cocina.
+
+En `platos.js` cada plato es una línea así:
+
+```js
+{ id: "p29", cat: "cortes", es: "Lomito en Salsa de Hongos", en: "Tenderloin with Mushroom Sauce", precio: 11300 },
+```
+
+Se cambia el número de `precio` y ya. Nada más.
+
+---
+
 ## Cómo cambiar el menú cuando suban los precios
 
 Las páginas del menú son imágenes. Para actualizarlas:
@@ -67,6 +90,11 @@ Las páginas del menú son imágenes. Para actualizarlas:
 3. Subí el cambio a GitHub — Vercel lo publica solo en un minuto
 
 **Importante:** los nombres tienen que quedar igual (`es-01.webp`, `es-02.webp`, …) y en orden, porque cada sección apunta a un número de página.
+
+**Y hay una versión chica de cada página**, `es-01-800.webp` … `en-08-800.webp`,
+que es la que se les manda a los teléfonos de pantalla normal para que gasten la
+mitad de datos. **Si regenerás las grandes y no las chicas, media clientela ve
+los precios nuevos y la otra media los viejos.** Las dos se regeneran juntas.
 
 Si el menú cambia de secciones o de cantidad de páginas, hay que ajustar la lista `secciones` que está al final de `es.html` y `en.html`. Cada línea dice el nombre que se muestra y a qué página lleva:
 

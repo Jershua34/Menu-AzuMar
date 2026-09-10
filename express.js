@@ -187,6 +187,21 @@
   }
 
   const total = () => lineas().reduce((s, l) => s + l.subtotal, 0);
+  /** Platos que se cobran segun peso (precio 0): el Pescado Entero. */
+  const hayPorPeso = () => lineas().some((l) => !l.p.precio);
+
+  /**
+   * El total como se le dice a alguien, no como lo calcula la maquina.
+   *
+   * Si el pedido lleva Pescado Entero, el numero NUNCA es el total real. Antes
+   * un pedido de solo pescado le llegaba a la cocina como "Total: ₡0", que es
+   * mentira y ademas parece un error del sistema.
+   */
+  function totalTexto() {
+    const t = total();
+    if (!hayPorPeso()) return colones(t);
+    return t > 0 ? colones(t) + " " + T.masSegunPeso : T.segunPeso;
+  }
   const cuantos = () => lineas().reduce((s, l) => s + l.n, 0);
 
   function pintarCarrito() {
@@ -195,7 +210,7 @@
     document.body.classList.toggle("con-carrito", n > 0);
     if (n === 0) return;
     resumen.textContent =
-      n + " " + (n === 1 ? T.plato : T.platos) + " · " + colones(total());
+      n + " " + (n === 1 ? T.plato : T.platos) + " · " + totalTexto();
   }
 
   // ---------- Ir a una categoría ----------
@@ -340,7 +355,7 @@
       );
     }
     l.push("");
-    l.push("*Total: " + colones(total()) + "*");
+    l.push("*Total: " + totalTexto() + "*");
     l.push("_Impuestos incluidos. El pescado entero se cobra según peso._");
     if (obs) {
       l.push("");
