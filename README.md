@@ -58,6 +58,24 @@ En Vercel: **Settings → Domains → Add**. Si comprás algo como `menuazumar.c
 
 ---
 
+## Por qué la carta se actualiza sola en el celular de la gente
+
+En `vercel.json`, las imágenes van con `Cache-Control: public, max-age=3600, must-revalidate`.
+
+Antes decía `immutable` por un año. Como los archivos se llaman siempre igual
+(`es-01.webp`), un cliente que ya había escaneado el QR **seguía viendo los
+precios viejos aunque recargara**, hasta por un año. Con `must-revalidate` el
+navegador pregunta cada hora; si no cambió nada, el servidor contesta "igual que
+antes" (un 304) y no baja la imagen, así que no gasta datos.
+
+**No le vuelvas a poner `immutable`** mientras los archivos se llamen igual.
+
+Y ojo: `vercel.json` solo acepta las claves de Vercel. Si le agregás una propia
+(por ejemplo un comentario), **el despliegue falla en silencio** y la
+configuración se queda en la anterior.
+
+---
+
 ## AVISO IMPORTANTE: los precios viven en DOS sitios
 
 Esto es lo que más fácil se olvida, y es lo que hace que un cliente pague de menos.
