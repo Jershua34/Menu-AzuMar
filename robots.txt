@@ -1,0 +1,10 @@
+# Menú del Restaurante y Marisquería AzuMar — Quepos, Costa Rica
+# Todo el sitio es público y se puede indexar, menos las páginas de
+# confirmación de pedido, que solo tienen sentido para quien acaba de pedir.
+
+User-agent: *
+Allow: /
+Disallow: /gracias
+Disallow: /gracias-en
+
+Sitemap: https://menu-azu-mar.vercel.app/sitemap.xml
