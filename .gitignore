@@ -12,3 +12,9 @@ desktop.ini
 
 # Nada de node aquí: este sitio es HTML puro, no necesita instalar nada
 node_modules/
+
+# Fotos originales de las cartas (los JPG que salieron de los ZIP).
+# Se guardan aquí como respaldo para no volver a pedirlos, pero NO suben a
+# GitHub: el sitio sirve las .webp, que pesan la mitad. Si se subieran, cada
+# actualización del menú cargaría 6 MB de más sin que nadie los vea.
+_originales/
