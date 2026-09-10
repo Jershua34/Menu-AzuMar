@@ -296,8 +296,26 @@
       return;
     }
 
-    window.open(enlaceWhatsapp(nom, tel, dir, obs), "_blank", "noopener");
+    const enlace = enlaceWhatsapp(nom, tel, dir, obs);
+
+    // Se guarda ANTES de vaciar. Si el navegador bloquea la ventana de
+    // WhatsApp, o el cliente la cierra sin querer, la página de despedida se
+    // lo ofrece otra vez y no tiene que rehacer el pedido.
+    try {
+      sessionStorage.setItem("azumar-ultimo-pedido", enlace);
+    } catch (e) {
+      /* modo privado: sin respaldo, pero el envío funciona igual */
+    }
+
+    window.open(enlace, "_blank", "noopener");
+
+    // El pedido se cierra aquí: el siguiente cliente (o el mismo, más tarde)
+    // arranca de cero. Dejar el carrito lleno hace que se pida dos veces lo
+    // mismo sin querer.
+    pedido = {};
+    guardar();
     modal.close();
+    window.location.href = T.paginaGracias;
   });
 
   /** El mensaje va en español SIEMPRE: lo lee la cocina, no el cliente. */

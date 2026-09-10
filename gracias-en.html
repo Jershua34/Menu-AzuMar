@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Order sent · AzuMar</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#001A3E">
+<link rel="icon" href="logo.webp">
+<link rel="apple-touch-icon" href="logo.webp">
+<link rel="stylesheet" href="menu.css">
+<style>
+  body{
+    min-height:100svh;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;
+    gap:clamp(14px,2.6vh,24px);
+    padding:clamp(20px,4vh,40px) 22px calc(clamp(20px,4vh,40px) + env(safe-area-inset-bottom));
+  }
+  .sello{
+    width:76px;height:76px;
+    display:grid;place-items:center;
+    font-size:34px;line-height:1;
+    color:var(--navy);background:var(--gold);
+    border-radius:50%;
+    box-shadow:0 10px 30px rgba(214,169,59,.28);
+  }
+  h1{
+    font-size:clamp(22px,5.4vw,30px);font-weight:700;line-height:1.25;
+    color:var(--paper);max-width:16ch;
+  }
+  .que-sigue{
+    font-size:clamp(14px,3.6vw,16px);line-height:1.55;
+    color:rgba(244,239,228,.78);
+    max-width:34ch;
+  }
+  .fallo{
+    display:none;
+    width:min(360px,100%);
+    padding:14px 18px;
+    font-size:13.5px;line-height:1.5;
+    color:var(--gold-soft);
+    background:rgba(214,169,59,.09);
+    border:1px solid rgba(214,169,59,.32);
+    border-radius:12px;
+  }
+  .fallo a{color:var(--gold);font-weight:700}
+  .acciones-gracias{display:flex;flex-direction:column;gap:10px;width:min(360px,100%)}
+  .acciones-gracias a{
+    display:block;padding:14px 20px;
+    font-size:15px;font-weight:600;text-decoration:none;
+    border-radius:999px;
+  }
+  .principal{background:var(--gold);color:var(--navy)}
+  .principal:hover{background:var(--gold-soft)}
+  .secundaria{
+    background:rgba(255,255,255,.04);color:var(--gold-soft);
+    border:1px solid rgba(214,169,59,.45);
+  }
+  .secundaria:hover{background:rgba(214,169,59,.16)}
+  .contacto-gracias{
+    font-size:12px;letter-spacing:.07em;text-transform:uppercase;
+    color:rgba(244,239,228,.5);line-height:1.8;
+  }
+  .contacto-gracias a{color:var(--gold-soft);text-decoration:none}
+</style>
+</head>
+<body>
+
+<div class="sello" aria-hidden="true">✓</div>
+
+<h1>Your order is on its way to AzuMar</h1>
+
+<p class="que-sigue">
+  Check that the message went out in your WhatsApp. As soon as we get it we will
+  reply there to confirm your order and the delivery time.
+</p>
+
+<!-- Si el navegador bloqueó la ventana de WhatsApp, el pedido no se pierde -->
+<div class="fallo" id="fallo">
+  WhatsApp did not open? Tap here to send it:
+  <a id="reintentar" href="#" target="_blank" rel="noopener">Open WhatsApp with my order</a>
+</div>
+
+<nav class="acciones-gracias" aria-label="What would you like to do now">
+  <a class="principal" href="express-en.html">Place another order</a>
+  <a class="secundaria" href="en.html">Back to the menu</a>
+</nav>
+
+<p class="contacto-gracias">
+  <a href="tel:+50687758360">8775-8360</a><br>
+  12 pm to 11 pm · Quepos<br>
+  <a href="legal-en.html">Terms and privacy</a>
+</p>
+
+<script>
+  // El enlace de WhatsApp se guardó justo antes de salir del pedido. Si la
+  // ventana no llegó a abrirse, acá lo puede volver a intentar sin rehacer
+  // el pedido. (Comentarios en español: los mantiene Jershua.)
+  (function () {
+    try {
+      var enlace = sessionStorage.getItem("azumar-ultimo-pedido");
+      if (!enlace) return;
+      document.getElementById("reintentar").href = enlace;
+      document.getElementById("fallo").style.display = "block";
+    } catch (e) {
+      /* modo privado: no hay respaldo, pero la página funciona igual */
+    }
+
+    // La copia lleva nombre, teléfono y dirección. Solo hace falta mientras
+    // el cliente esté en esta página por si tiene que reintentar; al salir
+    // se borra, para no dejar sus datos dando vueltas en el teléfono.
+    function olvidar() {
+      try { sessionStorage.removeItem("azumar-ultimo-pedido"); } catch (e) {}
+    }
+    document.querySelectorAll(".acciones-gracias a").forEach(function (a) {
+      a.addEventListener("click", olvidar);
+    });
+    window.addEventListener("pagehide", olvidar);
+  })();
+</script>
+</body>
+</html>
