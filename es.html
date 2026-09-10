@@ -21,6 +21,7 @@
 </head>
 <body>
 
+<div class="barra-fija">
 <header>
   <a href="index.html" aria-label="Volver al inicio">
     <img class="logo" src="logo.webp" alt="AzuMar" width="32" height="32">
@@ -34,10 +35,49 @@
 </header>
 
 <nav class="secciones" id="secciones" role="tablist" aria-label="Secciones del menú"></nav>
+</div>
 
-<main class="visor" id="visor" aria-live="polite"></main>
+<p class="pista">Bajá el dedo para ver todo · o tocá una sección</p>
 
-<p class="pista">Tocá una sección · deslizá para hojear</p>
+<main class="visor" id="visor"></main>
+
+<footer class="pie-info">
+  <p class="estado" id="estado" hidden></p>
+
+  <div class="galeria" role="group" aria-label="Algunos de nuestros platos">
+    <img src="foto-ceviche.webp" alt="Ceviche de pescado" width="750" height="450" loading="lazy" decoding="async">
+    <img src="foto-coctel.webp" alt="Cóctel de camarón" width="253" height="450" loading="lazy" decoding="async">
+    <img src="foto-pescado-entero.webp" alt="Pescado entero" width="800" height="450" loading="lazy" decoding="async">
+    <img src="foto-arroz.webp" alt="Arroz AzuMar" width="800" height="450" loading="lazy" decoding="async">
+    <img src="foto-filet-camarones.webp" alt="Filet de pescado con salsa de camarones" width="376" height="450" loading="lazy" decoding="async">
+    <img src="foto-maracuya.webp" alt="Filet de pescado en salsa de maracuyá" width="800" height="450" loading="lazy" decoding="async">
+    <img src="foto-tartar.webp" alt="Tartar de atún" width="655" height="450" loading="lazy" decoding="async">
+    <img src="foto-churrasco.webp" alt="Churrasco" width="338" height="450" loading="lazy" decoding="async">
+  </div>
+
+  <a class="boton-pedir" href="https://wa.me/50687758360" target="_blank" rel="noopener">
+    Pedir por WhatsApp
+  </a>
+
+  <dl class="datos">
+    <dt>Teléfono y Sinpe</dt>
+    <dd><a href="tel:+50687758360">8775-8360</a> · Yohis Hernández B.</dd>
+    <dt>Dónde estamos</dt>
+    <dd>La Inmaculada, frente a la entrada principal. Quepos.</dd>
+    <dt>Horario</dt>
+    <dd>Todos los días de 12 md a 11 pm. Express disponible.</dd>
+  </dl>
+
+  <p class="impuestos">Los precios del menú ya llevan impuestos incluidos.</p>
+
+  <nav class="redes" aria-label="Redes sociales">
+    <a href="https://www.instagram.com/azu_mar_rest/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.facebook.com/profile.php?id=61591189964160" target="_blank" rel="noopener">Facebook</a>
+  </nav>
+</footer>
+
+<button class="arriba" id="arriba" type="button" aria-label="Volver al inicio del menú">↑</button>
+
 
 <script>
   window.MENU = {
@@ -53,7 +93,11 @@
       { id: "batidos",   nombre: "Batidos",             pagina: 7 },
       { id: "bebidas",   nombre: "Bebidas e infantil",  pagina: 8 },
     ],
-    textos: { pagina: "Página del menú" },
+    textos: {
+      pagina: "Página del menú",
+      abierto: "Abierto ahora",
+      cerrado: "Cerrado · abrimos a las 12 md",
+    },
   };
 </script>
 <script src="menu.js"></script>

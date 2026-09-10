@@ -21,6 +21,7 @@
 </head>
 <body>
 
+<div class="barra-fija">
 <header>
   <a href="index.html" aria-label="Back to start">
     <img class="logo" src="logo.webp" alt="AzuMar" width="32" height="32">
@@ -34,10 +35,49 @@
 </header>
 
 <nav class="secciones" id="secciones" role="tablist" aria-label="Menu sections"></nav>
+</div>
 
-<main class="visor" id="visor" aria-live="polite"></main>
+<p class="pista">Scroll down to see it all · or tap a section</p>
 
-<p class="pista">Tap a section · swipe to browse</p>
+<main class="visor" id="visor"></main>
+
+<footer class="pie-info">
+  <p class="estado" id="estado" hidden></p>
+
+  <div class="galeria" role="group" aria-label="A few of our dishes">
+    <img src="foto-ceviche.webp" alt="Fish ceviche" width="750" height="450" loading="lazy" decoding="async">
+    <img src="foto-coctel.webp" alt="Shrimp cocktail" width="253" height="450" loading="lazy" decoding="async">
+    <img src="foto-pescado-entero.webp" alt="Whole fish" width="800" height="450" loading="lazy" decoding="async">
+    <img src="foto-arroz.webp" alt="AzuMar rice" width="800" height="450" loading="lazy" decoding="async">
+    <img src="foto-filet-camarones.webp" alt="Fish fillet with shrimp sauce" width="376" height="450" loading="lazy" decoding="async">
+    <img src="foto-maracuya.webp" alt="Fish fillet in passion fruit sauce" width="800" height="450" loading="lazy" decoding="async">
+    <img src="foto-tartar.webp" alt="Tuna tartare" width="655" height="450" loading="lazy" decoding="async">
+    <img src="foto-churrasco.webp" alt="Grilled tenderloin steak" width="338" height="450" loading="lazy" decoding="async">
+  </div>
+
+  <a class="boton-pedir" href="https://wa.me/50687758360" target="_blank" rel="noopener">
+    Order on WhatsApp
+  </a>
+
+  <dl class="datos">
+    <dt>Phone and Sinpe</dt>
+    <dd><a href="tel:+50687758360">8775-8360</a> · Yohis Hernández B.</dd>
+    <dt>Find us</dt>
+    <dd>La Inmaculada, across from the main entrance. Quepos.</dd>
+    <dt>Hours</dt>
+    <dd>Every day from 12 pm to 11 pm. Delivery available.</dd>
+  </dl>
+
+  <p class="impuestos">All applicable taxes are already included in the prices.</p>
+
+  <nav class="redes" aria-label="Social media">
+    <a href="https://www.instagram.com/azu_mar_rest/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.facebook.com/profile.php?id=61591189964160" target="_blank" rel="noopener">Facebook</a>
+  </nav>
+</footer>
+
+<button class="arriba" id="arriba" type="button" aria-label="Back to the top of the menu">↑</button>
+
 
 <script>
   window.MENU = {
@@ -53,7 +93,11 @@
       { id: "smoothies", nombre: "Smoothies",        pagina: 7 },
       { id: "drinks",    nombre: "Drinks & Kids",    pagina: 8 },
     ],
-    textos: { pagina: "Menu page" },
+    textos: {
+      pagina: "Menu page",
+      abierto: "Open now",
+      cerrado: "Closed · we open at 12 pm",
+    },
   };
 </script>
 <script src="menu.js"></script>
