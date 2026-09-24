@@ -34,6 +34,7 @@ const T = EN
       gracias: 'gracias-en.html',
       error: 'We couldn’t load the dishes. Check your connection and try again.',
       reintentar: 'Try again',
+      acepto: 'Please tick the box to accept how we use your details.',
     }
   : {
       porPeso: 'Según peso',
@@ -47,6 +48,7 @@ const T = EN
       gracias: 'gracias.html',
       error: 'No pudimos cargar los platos. Revisa tu conexión e inténtalo de nuevo.',
       reintentar: 'Intentar de nuevo',
+      acepto: 'Marca la casilla para aceptar el uso de tus datos.',
     };
 
 const nombreDe = (p) => (EN ? p.en : p.es);
@@ -260,6 +262,8 @@ function arrancar() {
     if (!nom || !dir) return avisar(T.faltan, !nom ? 'nombre' : 'direccion');
     // Sin un teléfono completo no se le puede avisar al cliente si algo falta.
     if (tel.replace(/\D/g, '').length < 8) return avisar(T.telefono, 'telefono');
+    // Consentimiento expreso para usar los datos (Ley 8968).
+    if (!formulario.elements.acepto.checked) return avisar(T.acepto, 'acepto');
 
     const enlace = enlaceWhatsapp(nom, tel, dir, obs);
     // Se guarda antes de vaciar: si el navegador bloquea WhatsApp, la página

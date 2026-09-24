@@ -16,7 +16,11 @@ M = "https://menu-azu-mar.vercel.app/"
 comunes = [
     ('<html lang="es-CR">', '<html lang="en">'),
     ('href="pedido.html"', 'href="pedido-en.html"'),
-    ('href="legal.html">Términos y privacidad</a>', 'href="legal-en.html">Terms and privacy</a>'),
+    ('<p class="pie-datos">La Inmaculada, frente a la entrada principal,', '<p class="pie-datos">La Inmaculada, across from the main entrance,'),
+    ('<a href="legal.html#terminos">Términos</a>', '<a href="legal-en.html#terms">Terms</a>'),
+    ('<a href="legal.html#reembolsos">Reembolsos</a>', '<a href="legal-en.html#refunds">Refunds</a>'),
+    ('<a href="legal.html#privacidad">Privacidad</a>', '<a href="legal-en.html#privacy">Privacy</a>'),
+    ('<a href="legal.html#cookies">Cookies</a>', '<a href="legal-en.html#cookies">Cookies</a>'),
     ('<p>Restaurante y Marisquería AzuMar · Quepos, Costa Rica</p>', '<p>AzuMar Restaurant and Seafood House · Quepos, Costa Rica</p>'),
     ('alt="AzuMar, del mar a tu mesa"', 'alt="AzuMar, from the sea to your table"'),
     ('>Pedir a domicilio</a>', '>Order delivery</a>'),
@@ -158,6 +162,8 @@ pedido = [
     ('<label for="f-observaciones">Observaciones <span class="opcional">(opcional)</span></label>', '<label for="f-observaciones">Notes <span class="opcional">(optional)</span></label>'),
     ('<button class="boton boton-oro boton-ancho" type="submit">Enviar por WhatsApp</button>', '<button class="boton boton-oro boton-ancho" type="submit">Send on WhatsApp</button>'),
     ('<p class="letra-chica">Se abre tu WhatsApp con el pedido ya escrito. Tú lo envías, y AzuMar te contesta por ahí mismo para confirmarlo.</p>', '<p class="letra-chica">Your WhatsApp opens with the order already written. You send it, and AzuMar replies there to confirm it.</p>'),
+    ('<label for="f-acepto">Acepto que AzuMar use estos datos solo para preparar y entregar este pedido, según su <a href="legal.html#privacidad" target="_blank" rel="noopener">política de privacidad<span class="solo-lector"> (abre en otra pestaña)</span></a>.</label>',
+     '<label for="f-acepto">I agree that AzuMar may use these details only to prepare and deliver this order, as set out in its <a href="legal-en.html#privacy" target="_blank" rel="noopener">privacy policy<span class="solo-lector"> (opens in a new tab)</span></a>.</label>'),
     ('<button class="vaciar" id="vaciar" type="button">Vaciar el pedido</button>', '<button class="vaciar" id="vaciar" type="button">Clear order</button>'),
 ]
 base_pedido = [c for c in comunes if "Pedir a domicilio" not in c[0] and "pedido.html" not in c[0]]

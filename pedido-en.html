@@ -101,7 +101,8 @@
 <footer class="pie">
   <img src="logo-azumar-360.webp" alt="AzuMar, from the sea to your table" width="360" height="307" loading="lazy">
   <p>AzuMar Restaurant and Seafood House · Quepos, Costa Rica</p>
-  <p class="pie-legal"><a href="legal-en.html">Terms and privacy</a> <span aria-hidden="true">·</span> © 2026 AzuMar</p>
+  <p class="pie-datos">La Inmaculada, across from the main entrance, Quepos, Puntarenas<br><a href="tel:+50687758360">8775-8360</a> <span aria-hidden="true">·</span> <a href="mailto:azumarrestaurante@gmail.com">azumarrestaurante@gmail.com</a></p>
+  <p class="pie-legal"><a href="legal-en.html#terms">Terms</a> <span aria-hidden="true">·</span> <a href="legal-en.html#refunds">Refunds</a> <span aria-hidden="true">·</span> <a href="legal-en.html#privacy">Privacy</a> <span aria-hidden="true">·</span> <a href="legal-en.html#cookies">Cookies</a> <span aria-hidden="true">·</span> © 2026 AzuMar</p>
 </footer>
 
 <!-- Barra del pedido: aparece sola en cuanto hay algo elegido. -->
@@ -138,6 +139,10 @@
     <div class="campo">
       <label for="f-observaciones">Notes <span class="opcional">(optional)</span></label>
       <textarea id="f-observaciones" name="observaciones" rows="2"></textarea>
+    </div>
+    <div class="casilla">
+      <input id="f-acepto" name="acepto" type="checkbox" required>
+      <label for="f-acepto">I agree that AzuMar may use these details only to prepare and deliver this order, as set out in its <a href="legal-en.html#privacy" target="_blank" rel="noopener">privacy policy<span class="solo-lector"> (opens in a new tab)</span></a>.</label>
     </div>
     <p class="aviso" id="aviso" role="alert"></p>
     <button class="boton boton-oro boton-ancho" type="submit">Send on WhatsApp</button>

@@ -17,6 +17,41 @@
       "source": "/express-en",
       "destination": "/pedido-en",
       "permanent": true
+    },
+    {
+      "source": "/terminos",
+      "destination": "/legal#terminos",
+      "permanent": false
+    },
+    {
+      "source": "/reembolsos",
+      "destination": "/legal#reembolsos",
+      "permanent": false
+    },
+    {
+      "source": "/privacidad",
+      "destination": "/legal#privacidad",
+      "permanent": false
+    },
+    {
+      "source": "/cookies",
+      "destination": "/legal#cookies",
+      "permanent": false
+    },
+    {
+      "source": "/terms",
+      "destination": "/legal-en#terms",
+      "permanent": false
+    },
+    {
+      "source": "/refunds",
+      "destination": "/legal-en#refunds",
+      "permanent": false
+    },
+    {
+      "source": "/privacy",
+      "destination": "/legal-en#privacy",
+      "permanent": false
     }
   ],
   "headers": [

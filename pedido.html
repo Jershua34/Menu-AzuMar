@@ -101,7 +101,8 @@
 <footer class="pie">
   <img src="logo-azumar-360.webp" alt="AzuMar, del mar a tu mesa" width="360" height="307" loading="lazy">
   <p>Restaurante y Marisquería AzuMar · Quepos, Costa Rica</p>
-  <p class="pie-legal"><a href="legal.html">Términos y privacidad</a> <span aria-hidden="true">·</span> © 2026 AzuMar</p>
+  <p class="pie-datos">La Inmaculada, frente a la entrada principal, Quepos, Puntarenas<br><a href="tel:+50687758360">8775-8360</a> <span aria-hidden="true">·</span> <a href="mailto:azumarrestaurante@gmail.com">azumarrestaurante@gmail.com</a></p>
+  <p class="pie-legal"><a href="legal.html#terminos">Términos</a> <span aria-hidden="true">·</span> <a href="legal.html#reembolsos">Reembolsos</a> <span aria-hidden="true">·</span> <a href="legal.html#privacidad">Privacidad</a> <span aria-hidden="true">·</span> <a href="legal.html#cookies">Cookies</a> <span aria-hidden="true">·</span> © 2026 AzuMar</p>
 </footer>
 
 <!-- Barra del pedido: aparece sola en cuanto hay algo elegido. -->
@@ -138,6 +139,10 @@
     <div class="campo">
       <label for="f-observaciones">Observaciones <span class="opcional">(opcional)</span></label>
       <textarea id="f-observaciones" name="observaciones" rows="2"></textarea>
+    </div>
+    <div class="casilla">
+      <input id="f-acepto" name="acepto" type="checkbox" required>
+      <label for="f-acepto">Acepto que AzuMar use estos datos solo para preparar y entregar este pedido, según su <a href="legal.html#privacidad" target="_blank" rel="noopener">política de privacidad<span class="solo-lector"> (abre en otra pestaña)</span></a>.</label>
     </div>
     <p class="aviso" id="aviso" role="alert"></p>
     <button class="boton boton-oro boton-ancho" type="submit">Enviar por WhatsApp</button>
