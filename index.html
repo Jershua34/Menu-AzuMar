@@ -25,7 +25,32 @@
 <link rel="preload" href="fuente-manrope.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="logo-azumar.webp" as="image">
 <link rel="modulepreload" href="three.module.min.js">
+<script>
+  // Chrome en Android con "Sitio de escritorio" dibuja la página a 980 px y la
+  // achica: todo se ve diminuto. Aquí se detecta y se amplía la página al ancho
+  // real del teléfono, con su diseño de celular (ver generar-modo-escritorio.py).
+  (function () {
+    var d = document.documentElement;
+    function ajustar() {
+      var w = screen.width, z = innerWidth / w;
+      var activo = navigator.maxTouchPoints > 0 && w < 700 && z > 1.25;
+      d.classList.toggle('modo-escritorio', activo);
+      [899, 767, 599, 480, 380].forEach(function (n) { d.classList.toggle('mx-' + n, activo && w <= n); });
+      d.style.zoom = activo ? z : '';
+      if (activo) {
+        var h = innerHeight / z / 100 + 'px';
+        d.style.setProperty('--vw', w / 100 + 'px');
+        ['--vh', '--dvh', '--svh'].forEach(function (p) { d.style.setProperty(p, h); });
+      } else {
+        ['--vw', '--vh', '--dvh', '--svh'].forEach(function (p) { d.style.removeProperty(p); });
+      }
+    }
+    ajustar();
+    addEventListener('resize', ajustar);
+  })();
+</script>
 <link rel="stylesheet" href="estilos.css">
+<link rel="stylesheet" href="modo-escritorio.css">
 <script>
   // Esconde el texto de la portada un instante para que entre animado.
   // Si en 3 segundos la animación no arrancó (sin conexión, error), se muestra igual.
@@ -53,7 +78,8 @@
     "addressRegion": "Puntarenas",
     "addressCountry": "CR"
   },
-  "geo": { "@type": "GeoCoordinates", "latitude": 9.4306, "longitude": -84.1616 },
+  "geo": { "@type": "GeoCoordinates", "latitude": 9.4469514, "longitude": -84.1393133 },
+  "hasMap": "https://maps.app.goo.gl/rSVoSGCg2ccCmHdG9",
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
@@ -268,7 +294,7 @@
         <p>Abierto todos los días de la semana.</p>
       </div>
 
-      <a class="celda celda-mapa" href="https://www.google.com/maps/search/?api=1&amp;query=9.4306%2C-84.1616" target="_blank" rel="noopener">
+      <a class="celda celda-mapa" href="https://maps.app.goo.gl/rSVoSGCg2ccCmHdG9" target="_blank" rel="noopener">
         <svg class="icono icono-grande" aria-hidden="true"><use href="#i-map-pin"/></svg>
         <h3>Dirección</h3>
         <p class="dato-grande">La Inmaculada, Quepos</p>

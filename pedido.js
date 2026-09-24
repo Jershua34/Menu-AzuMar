@@ -318,8 +318,10 @@ function arrancar() {
     e.preventDefault();
     const destino = document.getElementById(a.hash.slice(1));
     const barras = document.getElementById('nav').offsetHeight + document.getElementById('secciones').offsetHeight;
-    const y = destino.getBoundingClientRect().top + window.scrollY - barras + parseFloat(getComputedStyle(destino).paddingTop) - 28;
-    window.scrollTo({ top: y, behavior: quieto ? 'auto' : 'smooth' });
+    const aire = parseFloat(getComputedStyle(destino).paddingTop);
+    // El navegador calcula el salto (también con la página ampliada del modo escritorio).
+    destino.style.scrollMarginTop = `${barras - aire + 28}px`;
+    destino.scrollIntoView({ behavior: quieto ? 'auto' : 'smooth' });
   }));
 
   // Si venía con platos elegidos, se le devuelven marcados (y se descartan los que ya no existen).

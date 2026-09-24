@@ -34,6 +34,18 @@ significa "según peso" (el pescado entero). Los precios ya llevan impuestos: no
 Las páginas en inglés **no se editan a mano**. Si una frase en español cambió y el script no
 la encuentra, se detiene y dice cuál: así no quedan páginas con los dos idiomas mezclados.
 
+## Teléfonos con "Sitio de escritorio"
+
+Chrome en Android con "Sitio de escritorio" activado dibuja la página a 980 px y la achica: todo
+se ve diminuto y con el diseño de computadora. Mucha gente lo tiene activado sin saberlo. Para
+que la página se vea como en cualquier celular:
+
+- Un script en el `<head>` de cada página detecta ese caso y amplía la página al ancho real del
+  teléfono.
+- `estilos.css` no usa `vw`/`vh` directamente, sino `var(--vw)`, `var(--vh)`, etc.
+- `modo-escritorio.css` repite las reglas de celular para ese caso. **Se genera:** después de
+  cambiar `estilos.css`, correr `python generar-modo-escritorio.py`.
+
 ## El mensaje a la cocina
 
 El pedido sale por WhatsApp **siempre en español**, aunque el cliente pida en inglés, porque

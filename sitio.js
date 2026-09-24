@@ -18,6 +18,8 @@ const quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const raiz = document.documentElement;
 const { gsap, ScrollTrigger, Lenis } = window;
 const hayGsap = Boolean(gsap && ScrollTrigger);
+// Teléfono con "Sitio de escritorio": página quieta y completa, como en movimiento reducido.
+const escritorio = raiz.classList.contains('modo-escritorio');
 
 /* ---------- El mar ---------- */
 
@@ -35,7 +37,7 @@ montarTarjeta();
 
 /* ---------- Sin GSAP o sin movimiento: página quieta y completa ---------- */
 
-if (!hayGsap || quieto) {
+if (!hayGsap || quieto || escritorio) {
   raiz.classList.remove('js-anima');
   document.querySelector('.platos').classList.add('nativa');
   navegacionSimple();

@@ -9,7 +9,32 @@
 <meta name="color-scheme" content="dark">
 <link rel="icon" href="icono.png">
 <link rel="preload" href="fuente-cinzel.woff2" as="font" type="font/woff2" crossorigin>
+<script>
+  // Chrome en Android con "Sitio de escritorio" dibuja la página a 980 px y la
+  // achica: todo se ve diminuto. Aquí se detecta y se amplía la página al ancho
+  // real del teléfono, con su diseño de celular (ver generar-modo-escritorio.py).
+  (function () {
+    var d = document.documentElement;
+    function ajustar() {
+      var w = screen.width, z = innerWidth / w;
+      var activo = navigator.maxTouchPoints > 0 && w < 700 && z > 1.25;
+      d.classList.toggle('modo-escritorio', activo);
+      [899, 767, 599, 480, 380].forEach(function (n) { d.classList.toggle('mx-' + n, activo && w <= n); });
+      d.style.zoom = activo ? z : '';
+      if (activo) {
+        var h = innerHeight / z / 100 + 'px';
+        d.style.setProperty('--vw', w / 100 + 'px');
+        ['--vh', '--dvh', '--svh'].forEach(function (p) { d.style.setProperty(p, h); });
+      } else {
+        ['--vw', '--vh', '--dvh', '--svh'].forEach(function (p) { d.style.removeProperty(p); });
+      }
+    }
+    ajustar();
+    addEventListener('resize', ajustar);
+  })();
+</script>
 <link rel="stylesheet" href="estilos.css">
+<link rel="stylesheet" href="modo-escritorio.css">
 </head>
 <body class="pagina-gracias">
 <main class="gracias">

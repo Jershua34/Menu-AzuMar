@@ -10,7 +10,8 @@ import { montarMar } from './escena-mar.js';
 const quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const raiz = document.documentElement;
 const { gsap, ScrollTrigger, Lenis } = window;
-const animar = Boolean(gsap && ScrollTrigger) && !quieto;
+// Teléfono con "Sitio de escritorio": sin animaciones ligadas al scroll.
+const animar = Boolean(gsap && ScrollTrigger) && !quieto && !raiz.classList.contains('modo-escritorio');
 
 // Un solo archivo para las dos cartas: el idioma lo dice <html lang>.
 const EN = raiz.lang.startsWith('en');
@@ -235,9 +236,15 @@ function enlazarPastillas() {
       const destino = document.getElementById(a.hash.slice(1));
       const barras = document.getElementById('nav').offsetHeight + document.getElementById('secciones').offsetHeight;
       const aire = parseFloat(getComputedStyle(destino).paddingTop);
-      const y = destino.getBoundingClientRect().top + window.scrollY - barras + aire - 28;
-      if (lenis) lenis.scrollTo(y, { duration: 1.1 });
-      else window.scrollTo({ top: y, behavior: quieto ? 'auto' : 'smooth' });
+      if (lenis) {
+        const y = destino.getBoundingClientRect().top + window.scrollY - barras + aire - 28;
+        lenis.scrollTo(y, { duration: 1.1 });
+      } else {
+        // Sin desplazamiento suave (o con la página ampliada del modo escritorio)
+        // el navegador calcula el salto: el margen se da en la misma unidad que usa él.
+        destino.style.scrollMarginTop = `${barras - aire + 28}px`;
+        destino.scrollIntoView({ behavior: quieto ? 'auto' : 'smooth' });
+      }
       history.replaceState(null, '', a.hash);
     });
   });

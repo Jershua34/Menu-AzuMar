@@ -1,0 +1,115 @@
+/* GENERADO por generar-modo-escritorio.py a partir de estilos.css. No editar a mano. */
+
+html.mx-767 .nav { height: 64px; gap: 8px; }
+
+html.mx-767 .nav .boton-chico { margin-left: auto; padding: 0 14px; font-size: .94rem; }
+
+html.mx-767 .nav-idioma { font-size: .94rem; }
+
+html.mx-767 .secciones a { font-size: .94rem; }
+
+html.mx-767 .nav-marca img { width: 56px; }
+
+html.mx-767 .nav-menu { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px;
+    border: 0; border-radius: var(--pildora); cursor: pointer;
+    background: rgba(0, 26, 62, .55); color: var(--crema);
+    box-shadow: inset 0 0 0 1px var(--linea);
+    order: 3; }
+
+html.mx-767 .nav-menu .icono { width: 22px; height: 22px; }
+
+html.mx-767 .nav-menu,
+html.mx-767 .nav-marca,
+html.mx-767 .nav-idioma { flex: none; }
+
+html.mx-767 .nav nav { position: absolute; top: 100%; left: 0; right: 0; margin: 0;
+    background: rgba(0, 26, 62, .96);
+    -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+    box-shadow: 0 1px 0 var(--linea);
+    padding: 8px var(--margen) 20px;
+    visibility: hidden; opacity: 0; translate: 0 -8px;
+    transition: opacity 200ms var(--salida), translate 200ms var(--salida), visibility 0s linear 200ms; }
+
+html.mx-767 .nav.abierto nav { visibility: visible; opacity: 1; translate: 0 0; transition-delay: 0s; }
+
+html.mx-767 .nav-enlaces { flex-direction: column; gap: 0; }
+
+html.mx-767 .nav-enlaces a { width: 100%; min-height: 52px; font-size: 1.05rem; box-shadow: 0 1px 0 var(--linea); }
+
+html.mx-767 .nav-enlaces a::after { display: none; }
+
+html.mx-899 .portada { align-items: stretch; }
+
+html.mx-899 .portada-contenido { grid-template-columns: 1fr;
+    align-content: space-between;
+    padding-top: 84px; gap: 12px; }
+
+html.mx-899 .portada-logo { order: -1; justify-self: center; width: min(calc(62 * var(--vw)), 300px); }
+
+html.mx-899 .portada-velo { background: linear-gradient(0deg, rgba(0, 26, 62, .95) 0%, rgba(0, 26, 62, .55) 45%, rgba(0, 26, 62, .15) 100%); }
+
+html.mx-767 .platos.nativa .platos-pista { flex-direction: column; align-items: stretch; overflow: visible; }
+
+html.mx-767 .platos.nativa .platos-lista { overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 var(--margen);
+    margin: 0 calc(var(--margen) * -1); padding: 0 var(--margen) 48px; scrollbar-width: none; }
+
+html.mx-767 .platos.nativa .platos-lista::-webkit-scrollbar { display: none; }
+
+html.mx-767 .platos.nativa .platos-lista { align-items: flex-start; }
+
+html.mx-767 .platos.nativa .plato { width: calc(80 * var(--vw)); }
+
+html.mx-767 .platos.nativa .plato-ancho { width: calc(86 * var(--vw)); }
+
+html.mx-767 .platos.nativa .plato-alto { width: calc(66 * var(--vw)); }
+
+html.mx-899 .estrella { grid-template-columns: 1fr; }
+
+html.mx-899 .estrella-escena { min-height: auto; padding: 24px 0; }
+
+html.mx-899 .express { grid-template-columns: 1fr; }
+
+html.mx-899 .express-foto { position: relative; height: calc(56 * var(--vh)); }
+
+html.mx-899 .express-foto::after { background: linear-gradient(0deg, var(--marino) 0%, rgba(0, 26, 62, 0) 60%); }
+
+html.mx-899 .express-texto { padding: 8px var(--margen) 96px; }
+
+html.mx-899 .visita-rejilla { grid-template-columns: 1fr 1fr;
+    grid-template-areas: "horario mapa" "foto foto" "whats redes"; }
+
+html.mx-599 .visita-rejilla { grid-template-columns: 1fr; grid-template-areas: "horario" "mapa" "whats" "foto" "redes"; }
+
+html.mx-599 .celda { padding: 24px; }
+
+html.mx-767 .secciones { top: 64px; }
+
+html.mx-899 .grupo-con-foto { grid-template-columns: 1fr; }
+
+html.mx-899 .grupo-con-foto.foto-derecha .grupo-foto { order: 0; }
+
+html.mx-899 .grupo-foto { position: relative; top: 0; }
+
+html.mx-899 .grupo-foto img { aspect-ratio: 16 / 10; }
+
+html.mx-380 .nav .boton-chico { padding: 0 12px; font-size: .84rem; }
+
+html.mx-380 .nav-marca img { width: 46px; }
+
+html.mx-480 .item-foto { width: 60px; height: 60px; border-radius: 14px; }
+
+html.mx-480 .item-linea { flex-wrap: wrap; row-gap: 2px; }
+
+html.mx-480 .item-puntos { display: none; }
+
+html.mx-480 .item-linea .precio { width: 100%; }
+
+html.mx-480 .carrito { padding-left: 18px; }
+
+html.mx-480 .carrito .boton { padding: 0 18px; min-height: 48px; }
+
+html.mx-480 .ventana-cabeza,
+html.mx-480 .detalle,
+html.mx-480 #formulario { padding-left: 18px; padding-right: 18px; }
+
+html.mx-480 .total-fila { margin-left: 18px; margin-right: 18px; }

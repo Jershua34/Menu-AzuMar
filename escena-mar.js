@@ -147,9 +147,12 @@ export function montarMar(lienzo, { quieto = false } = {}) {
     return null;
   }
 
-  const movil = window.matchMedia('(max-width: 767px)').matches;
-  // Más de 2 píxeles por punto no se nota y cuesta el triple.
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, movil ? 1.25 : 2));
+  const escritorio = document.documentElement.classList.contains('modo-escritorio');
+  const movil = escritorio || window.matchMedia('(max-width: 767px)').matches;
+  // Más de 2 píxeles por punto no se nota y cuesta el triple. Con la página
+  // ampliada (modo escritorio del teléfono) hay que multiplicar por la ampliación.
+  const ampliacion = parseFloat(document.documentElement.style.zoom) || 1;
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio * ampliacion, movil ? 1.25 : 2));
 
   const escena = new THREE.Scene();
   const camara = new THREE.PerspectiveCamera(52, 1, 0.1, 200);
