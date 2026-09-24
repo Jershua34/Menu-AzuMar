@@ -1,79 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
-<!--
-  Mapa del sitio para los buscadores.
-
-  Las direcciones van SIN ".html" porque Vercel tiene cleanUrls activado: si
-  se pusieran con la extensión, cada una respondería con un redireccionamiento
-  y Google indexaría la dirección equivocada.
-
-  Las páginas de "gracias" no van: son el final de un pedido, no tienen
-  sentido para alguien que llega de una búsqueda.
--->
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://menu-azu-mar.vercel.app/</loc>
-    <lastmod>2026-09-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://menu-azu-mar.vercel.app/es"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://menu-azu-mar.vercel.app/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://menu-azu-mar.vercel.app/en"/>
   </url>
-
-  <url>
-    <loc>https://menu-azu-mar.vercel.app/es</loc>
-    <lastmod>2026-09-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://menu-azu-mar.vercel.app/es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://menu-azu-mar.vercel.app/en"/>
-  </url>
-
   <url>
     <loc>https://menu-azu-mar.vercel.app/en</loc>
-    <lastmod>2026-09-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://menu-azu-mar.vercel.app/es"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://menu-azu-mar.vercel.app/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://menu-azu-mar.vercel.app/en"/>
   </url>
-
   <url>
-    <loc>https://menu-azu-mar.vercel.app/express</loc>
-    <lastmod>2026-09-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://menu-azu-mar.vercel.app/express"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://menu-azu-mar.vercel.app/express-en"/>
+    <loc>https://menu-azu-mar.vercel.app/carta</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://menu-azu-mar.vercel.app/carta"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://menu-azu-mar.vercel.app/carta-en"/>
   </url>
-
   <url>
-    <loc>https://menu-azu-mar.vercel.app/express-en</loc>
-    <lastmod>2026-09-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://menu-azu-mar.vercel.app/express"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://menu-azu-mar.vercel.app/express-en"/>
+    <loc>https://menu-azu-mar.vercel.app/carta-en</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://menu-azu-mar.vercel.app/carta"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://menu-azu-mar.vercel.app/carta-en"/>
   </url>
-
+  <url>
+    <loc>https://menu-azu-mar.vercel.app/pedido</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://menu-azu-mar.vercel.app/pedido"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://menu-azu-mar.vercel.app/pedido-en"/>
+  </url>
+  <url>
+    <loc>https://menu-azu-mar.vercel.app/pedido-en</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://menu-azu-mar.vercel.app/pedido"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://menu-azu-mar.vercel.app/pedido-en"/>
+  </url>
   <url>
     <loc>https://menu-azu-mar.vercel.app/legal</loc>
-    <lastmod>2026-09-09</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://menu-azu-mar.vercel.app/legal"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://menu-azu-mar.vercel.app/legal-en"/>
   </url>
-
   <url>
     <loc>https://menu-azu-mar.vercel.app/legal-en</loc>
-    <lastmod>2026-09-09</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://menu-azu-mar.vercel.app/legal"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://menu-azu-mar.vercel.app/legal-en"/>
   </url>
-
 </urlset>

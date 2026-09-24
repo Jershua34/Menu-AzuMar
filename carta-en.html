@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Menu · AzuMar Seafood Restaurant in Quepos</title>
+<meta name="description" content="Full menu of AzuMar in Quepos: ceviche, seafood, rice dishes, steaks, pasta, casados and house drinks. Prices include taxes.">
+<meta name="theme-color" content="#001A3E">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://menu-azu-mar.vercel.app/carta-en">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The AzuMar menu">
+<meta property="og:description" content="Seafood restaurant in Quepos, Costa Rica. Prices include taxes.">
+<meta property="og:url" content="https://menu-azu-mar.vercel.app/carta-en">
+<meta property="og:image" content="https://menu-azu-mar.vercel.app/plato-pescado-entero.webp">
+
+<link rel="alternate" hreflang="es" href="https://menu-azu-mar.vercel.app/carta">
+<link rel="alternate" hreflang="en" href="https://menu-azu-mar.vercel.app/carta-en">
+<link rel="icon" href="icono.png">
+<link rel="apple-touch-icon" href="icono.png">
+<link rel="preload" href="fuente-cinzel.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fuente-manrope.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="modulepreload" href="three.module.min.js">
+<link rel="stylesheet" href="estilos.css">
+<script>
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('js-anima');
+    setTimeout(function () {
+      if (!document.documentElement.classList.contains('animado')) document.documentElement.classList.remove('js-anima');
+    }, 3000);
+  }
+</script>
+</head>
+<body class="pagina-carta">
+
+<a class="saltar" href="#carta">Skip to the menu</a>
+
+<header class="nav" id="nav">
+  <a class="nav-marca" href="en.html" aria-label="AzuMar, go to home page">
+    <img src="logo-azumar-360.webp" alt="" width="360" height="307">
+  </a>
+  <button class="nav-menu" type="button" aria-expanded="false" aria-controls="nav-enlaces" aria-label="Open navigation"><svg class="icono" viewBox="0 0 256 256" aria-hidden="true"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/></svg></button>
+  <nav aria-label="Main">
+    <ul class="nav-enlaces" id="nav-enlaces">
+      <li><a href="en.html">Home</a></li>
+      <li><a href="carta-en.html" aria-current="page">Menu</a></li>
+      <li><a href="en.html#visitanos">Visit us</a></li>
+    </ul>
+  </nav>
+  <a class="nav-idioma" href="carta.html" hreflang="es" lang="es" aria-label="Ver esta carta en español">ES</a>
+  <a class="boton boton-oro boton-chico" href="pedido-en.html">Order delivery</a>
+</header>
+
+<main>
+  <!-- Cabecera corta con el mismo mar 3D de la portada. -->
+  <section class="carta-cabeza" aria-labelledby="titulo-carta">
+    <div class="portada-fondo" aria-hidden="true">
+      <canvas id="mar"></canvas>
+      <div class="portada-velo"></div>
+    </div>
+    <div class="carta-cabeza-texto">
+      <h1 id="titulo-carta" class="revela">The menu</h1>
+      <p class="revela">All prices include taxes. Open every day from noon to 11 pm.</p>
+    </div>
+  </section>
+
+  <!-- Barra de secciones: se queda pegada arriba y marca dónde vas. -->
+  <nav class="secciones" id="secciones" aria-label="Menu sections">
+    <ul role="list" id="lista-secciones"></ul>
+  </nav>
+
+  <div class="carta" id="carta" tabindex="-1" aria-busy="true">
+    <!-- Mientras llegan los platos: la forma de la carta, sin texto. -->
+    <div class="carta-cargando" aria-hidden="true">
+      <div class="esqueleto esqueleto-titulo"></div>
+      <div class="esqueleto"></div><div class="esqueleto"></div><div class="esqueleto"></div>
+      <div class="esqueleto"></div><div class="esqueleto"></div>
+    </div>
+    <noscript>
+      <p class="carta-aviso">JavaScript is needed to show the menu. You can also ask us on <a href="https://wa.me/50687758360">WhatsApp at +506 8775-8360</a>.</p>
+    </noscript>
+  </div>
+
+  <section class="carta-cierre" aria-labelledby="titulo-cierre">
+    <h2 id="titulo-cierre">Craving something?</h2>
+    <p>Order from your phone and we’ll bring it to your door, or come eat with us across from La Inmaculada.</p>
+    <div class="portada-botones">
+      <a class="boton boton-oro" href="pedido-en.html">Order delivery</a>
+      <a class="boton boton-linea" href="en.html#visitanos">Get directions</a>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <img src="logo-azumar-360.webp" alt="AzuMar, from the sea to your table" width="360" height="307" loading="lazy">
+  <p>AzuMar Restaurant and Seafood House · Quepos, Costa Rica</p>
+  <p class="pie-legal"><a href="legal-en.html">Terms and privacy</a> <span aria-hidden="true">·</span> © 2026 AzuMar</p>
+</footer>
+
+<!-- Los platos y precios salen de platos.js, el mismo archivo que usa el pedido
+     a domicilio: un solo lugar para cambiar un precio en toda la web. -->
+<script src="platos.js" defer></script>
+<script src="gsap.min.js" defer></script>
+<script src="ScrollTrigger.min.js" defer></script>
+<script src="lenis.min.js" defer></script>
+<script src="nav.js" defer></script>
+<script type="module" src="carta.js"></script>
+</body>
+</html>
