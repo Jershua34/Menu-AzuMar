@@ -200,3 +200,71 @@ function montarTarjeta() {
     if (visible) cuadro = requestAnimationFrame(pintar);
   }).observe(escena);
 }
+
+/* Carrusel de fotos reales: cambia cada 5 s, se pausa con el botón, con el mouse encima o con el foco. */
+(function () {
+  var marco = document.getElementById('fotos-marco');
+  if (!marco) return;
+  var diapos = marco.querySelectorAll('.foto-diap');
+  var boton = document.getElementById('fotos-pausa');
+  var cuenta = document.getElementById('fotos-cuenta');
+  var total = diapos.length;
+  var actual = 0;
+  var pausado = false;
+  var reducir = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var temporizador = null;
+
+  function mostrar(i) {
+    diapos[actual].classList.remove('activa');
+    actual = (i + total) % total;
+    diapos[actual].classList.add('activa');
+    if (cuenta) cuenta.textContent = (actual + 1) + ' / ' + total;
+  }
+  function arrancar() {
+    if (reducir || pausado) return;
+    clearInterval(temporizador);
+    temporizador = setInterval(function () { mostrar(actual + 1); }, 5000);
+  }
+  function parar() { clearInterval(temporizador); }
+
+  if (reducir) {
+    pausado = true;
+    if (boton) { boton.textContent = boton.dataset.fija; boton.disabled = true; }
+  }
+  mostrar(0);
+  arrancar();
+
+  if (boton) {
+    boton.addEventListener('click', function () {
+      pausado = !pausado;
+      boton.setAttribute('aria-pressed', String(pausado));
+      boton.textContent = pausado ? boton.dataset.reanudar : boton.dataset.pausar;
+      if (pausado) parar(); else arrancar();
+    });
+  }
+  marco.addEventListener('mouseenter', parar);
+  marco.addEventListener('mouseleave', arrancar);
+  marco.addEventListener('focusin', parar);
+  marco.addEventListener('focusout', arrancar);
+})();
+
+
+/* Direcciones viejas: aviso de que dejarán de funcionar y la nueva dirección. Solo en esos dos hosts. */
+(function () {
+  var viejas = ['menu-azu-mar.vercel.app', 'menu-azumar-es-in.vercel.app'];
+  if (viejas.indexOf(window.location.hostname) === -1) return;
+  var ingles = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0;
+  var aviso = document.createElement('div');
+  aviso.className = 'aviso-viejo';
+  aviso.setAttribute('role', 'note');
+  var texto = document.createElement('span');
+  texto.textContent = ingles
+    ? 'This address will stop working. The new address of AzuMar is '
+    : 'Esta dirección dejará de funcionar. La nueva dirección de AzuMar es ';
+  var enlace = document.createElement('a');
+  enlace.href = 'https://restazumar.com/';
+  enlace.textContent = 'restazumar.com';
+  aviso.appendChild(texto);
+  aviso.appendChild(enlace);
+  document.body.insertBefore(aviso, document.body.firstChild);
+})();

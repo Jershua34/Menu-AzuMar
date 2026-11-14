@@ -241,6 +241,35 @@
     </div>
   </section>
 
+  <!-- Fotos reales de platos de la carta, en rotación lenta. Los precios van en la carta, no en las fotos. -->
+  <section class="fotos" aria-labelledby="titulo-fotos">
+    <div class="contenedor">
+      <h2 id="titulo-fotos">Así llega a tu mesa</h2>
+      <div class="fotos-marco" id="fotos-marco" aria-roledescription="carrusel" aria-label="Fotos de platos">
+        <figure class="foto-diap activa"><img src="fotos/ceviche-pescado.webp" alt="Foto: Ceviche de pescado con patacones" loading="lazy" width="1080" height="648"><figcaption>Ceviche de Pescado</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/coctel-camaron.webp" alt="Foto: Cóctel de camarón con patacones" loading="lazy" width="900" height="1600"><figcaption>Cóctel de Camarón</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/churrasco.webp" alt="Foto: Churrasco con acompañamientos" loading="lazy" width="1080" height="1440"><figcaption>Churrasco</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/pescado-entero.webp" alt="Foto: Pescado entero con patacones y ensalada" loading="lazy" width="1080" height="608"><figcaption>Pescado Entero</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/hamburguesa-azumar.webp" alt="Foto: Hamburguesa AzuMar con camarones" loading="lazy" width="1080" height="1433"><figcaption>Hamburguesa AzuMar</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/filet-camarones.webp" alt="Foto: Filete de pescado con salsa de camarones" loading="lazy" width="1080" height="1293"><figcaption>Filete con Salsa de Camarones</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/aros-calamar.webp" alt="Foto: Aros de calamar a la AzuMar" loading="lazy" width="1080" height="810"><figcaption>Aros de Calamar a la AzuMar</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/hoy-camarones-patacon.webp" alt="Foto: Camarones con patacón y guacamole" loading="lazy" width="1080" height="810"><figcaption>Camarones con Patacón y Guacamole</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/arroz-azumar.webp" alt="Foto: Arroz AzuMar con camarones y lomito" loading="lazy" width="1080" height="608"><figcaption>Arroz AzuMar</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/quesadilla-camaron.webp" alt="Foto: Quesadilla de camarón" loading="lazy" width="1080" height="608"><figcaption>Quesadilla de Camarón</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/hoy-tartar-atun.webp" alt="Foto: Tartar de atún con mango y aguacate" loading="lazy" width="810" height="1080"><figcaption>Tartar de Atún</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/pasta-mariscos.webp" alt="Foto: Pasta con mariscos" loading="lazy" width="1080" height="608"><figcaption>Pasta con Mariscos</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/hamburguesa-clasica.webp" alt="Foto: Hamburguesa clásica con papas fritas" loading="lazy" width="1080" height="608"><figcaption>Hamburguesa Clásica</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/filet-maracuya.webp" alt="Foto: Filete de pescado en salsa de maracuyá" loading="lazy" width="1080" height="608"><figcaption>Filete en Salsa de Maracuyá</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/hoy-pasta-pesto-camarones.webp" alt="Foto: Pasta al pesto con camarones" loading="lazy" width="810" height="1080"><figcaption>Pasta al Pesto con Camarones</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/hoy-filet-hongos.webp" alt="Foto: Filete de pollo con salsa de hongos" loading="lazy" width="810" height="1080"><figcaption>Filete de Pollo con Salsa de Hongos</figcaption></figure>
+      </div>
+      <div class="fotos-controles">
+        <button type="button" class="fotos-boton" id="fotos-pausa" aria-pressed="false" data-pausar="Pausar fotos" data-reanudar="Reanudar fotos" data-fija="Fotos fijas">Pausar fotos</button>
+        <span class="fotos-cuenta" id="fotos-cuenta" aria-live="off"></span>
+      </div>
+    </div>
+  </section>
+
   <!-- El plato estrella en 3D: se inclina con el mouse o el dedo. -->
   <section class="estrella" aria-labelledby="titulo-estrella">
     <div class="estrella-escena" id="escena-plato">

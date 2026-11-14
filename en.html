@@ -241,6 +241,35 @@
     </div>
   </section>
 
+  <!-- Fotos reales de platos de la carta, en rotación lenta. Los precios van en la carta, no en las fotos. -->
+  <section class="fotos" aria-labelledby="titulo-fotos">
+    <div class="contenedor">
+      <h2 id="titulo-fotos">The way it reaches your table</h2>
+      <div class="fotos-marco" id="fotos-marco" aria-roledescription="carousel" aria-label="Dish photos">
+        <figure class="foto-diap activa"><img src="fotos/ceviche-pescado.webp" alt="Fish ceviche with fried plantain" loading="lazy" width="1080" height="648"><figcaption>Fish Ceviche</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/coctel-camaron.webp" alt="Shrimp cocktail with fried plantain" loading="lazy" width="900" height="1600"><figcaption>Shrimp Cocktail</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/churrasco.webp" alt="Churrasco with sides" loading="lazy" width="1080" height="1440"><figcaption>Churrasco</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/pescado-entero.webp" alt="Whole fish with fried plantain and salad" loading="lazy" width="1080" height="608"><figcaption>Whole Fish</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/hamburguesa-azumar.webp" alt="AzuMar burger with shrimp" loading="lazy" width="1080" height="1433"><figcaption>AzuMar Burger</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/filet-camarones.webp" alt="Fish fillet with shrimp sauce" loading="lazy" width="1080" height="1293"><figcaption>Fillet with Shrimp Sauce</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/aros-calamar.webp" alt="AzuMar calamari rings" loading="lazy" width="1080" height="810"><figcaption>AzuMar Calamari Rings</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/hoy-camarones-patacon.webp" alt="Shrimp with plantain and guacamole" loading="lazy" width="1080" height="810"><figcaption>Shrimp with Plantain and Guacamole</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/arroz-azumar.webp" alt="AzuMar rice with shrimp and beef tenderloin" loading="lazy" width="1080" height="608"><figcaption>AzuMar Rice</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/quesadilla-camaron.webp" alt="Shrimp quesadilla" loading="lazy" width="1080" height="608"><figcaption>Shrimp Quesadilla</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/hoy-tartar-atun.webp" alt="Tuna tartare with mango and avocado" loading="lazy" width="810" height="1080"><figcaption>Tuna Tartare</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/pasta-mariscos.webp" alt="Seafood pasta" loading="lazy" width="1080" height="608"><figcaption>Seafood Pasta</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/hamburguesa-clasica.webp" alt="Classic burger with French fries" loading="lazy" width="1080" height="608"><figcaption>Classic Burger</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/filet-maracuya.webp" alt="Fish fillet in passion fruit sauce" loading="lazy" width="1080" height="608"><figcaption>Fillet in Passion Fruit Sauce</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/hoy-pasta-pesto-camarones.webp" alt="Shrimp pesto pasta" loading="lazy" width="810" height="1080"><figcaption>Shrimp Pesto Pasta</figcaption></figure>
+        <figure class="foto-diap"><img src="fotos/hoy-filet-hongos.webp" alt="Fillet with mushroom sauce" loading="lazy" width="810" height="1080"><figcaption>Chicken Fillet with Mushroom Sauce</figcaption></figure>
+      </div>
+      <div class="fotos-controles">
+        <button type="button" class="fotos-boton" id="fotos-pausa" aria-pressed="false" data-pausar="Pause photos" data-reanudar="Resume photos" data-fija="Photos paused">Pause photos</button>
+        <span class="fotos-cuenta" id="fotos-cuenta" aria-live="off"></span>
+      </div>
+    </div>
+  </section>
+
   <!-- El plato estrella en 3D: se inclina con el mouse o el dedo. -->
   <section class="estrella" aria-labelledby="titulo-estrella">
     <div class="estrella-escena" id="escena-plato">
