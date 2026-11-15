@@ -29,6 +29,13 @@ comunes = [
 ]
 
 inicio = [
+    ('<h3>Pasta al Pesto con Camarones</h3><p>Pasta en salsa pesto con camarones.</p>', '<h3>Shrimp Pesto Pasta</h3><p>Pasta in pesto sauce with shrimp.</p>'),
+    ('alt="Pasta al pesto con camarones"', 'alt="Shrimp pesto pasta"'),
+    ('alt="Filete de pollo con salsa de hongos, con puré y vegetales"', 'alt="Chicken fillet with mushroom sauce, with mashed potatoes and vegetables"'),
+    ('<h3>Filete de Pollo con Salsa de Hongos</h3><p>Acompañado de puré y vegetales.</p>', '<h3>Chicken Fillet with Mushroom Sauce</h3><p>Served with mashed potatoes and vegetables.</p>'),
+    ('<h3>Quesadilla de Camarón</h3><p>Tortilla de harina con camarón salteado y mozzarella, con papas fritas y ensalada.</p>', '<h3>Shrimp Quesadilla</h3><p>Flour tortilla with sautéed shrimp and mozzarella, with French fries and salad.</p>'),
+    ('<h3>Pasta con Mariscos</h3><p>Opción a elegir salsa blanca o roja.</p>', '<h3>Seafood Pasta</h3><p>Choice of white or red sauce.</p>'),
+    ('alt="Pasta con mariscos"', 'alt="Seafood pasta"'),
     ('alt="Foto: Pasta al pesto con camarones"', 'alt="Shrimp pesto pasta"'),
     ('alt="Foto: Filete de pollo con salsa de hongos"', 'alt="Fillet with mushroom sauce"'),
     ('<figcaption>Pasta al Pesto con Camarones</figcaption>', '<figcaption>Shrimp Pesto Pasta</figcaption>'),
