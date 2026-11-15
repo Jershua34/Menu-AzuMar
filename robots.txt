@@ -7,4 +7,4 @@ Allow: /
 Disallow: /gracias
 Disallow: /gracias-en
 
-Sitemap: https://menu-azu-mar.vercel.app/sitemap.xml
+Sitemap: https://restazumar.com/sitemap.xml

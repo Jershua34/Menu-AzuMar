@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://menu-azu-mar.vercel.app/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://menu-azu-mar.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://menu-azu-mar.vercel.app/en"/>
+    <loc>https://restazumar.com/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://restazumar.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://restazumar.com/en"/>
   </url>
   <url>
-    <loc>https://menu-azu-mar.vercel.app/en</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://menu-azu-mar.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://menu-azu-mar.vercel.app/en"/>
+    <loc>https://restazumar.com/en</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://restazumar.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://restazumar.com/en"/>
   </url>
   <url>
-    <loc>https://menu-azu-mar.vercel.app/carta</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://menu-azu-mar.vercel.app/carta"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://menu-azu-mar.vercel.app/carta-en"/>
+    <loc>https://restazumar.com/carta</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://restazumar.com/carta"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://restazumar.com/carta-en"/>
   </url>
   <url>
-    <loc>https://menu-azu-mar.vercel.app/carta-en</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://menu-azu-mar.vercel.app/carta"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://menu-azu-mar.vercel.app/carta-en"/>
+    <loc>https://restazumar.com/carta-en</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://restazumar.com/carta"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://restazumar.com/carta-en"/>
   </url>
   <url>
-    <loc>https://menu-azu-mar.vercel.app/pedido</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://menu-azu-mar.vercel.app/pedido"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://menu-azu-mar.vercel.app/pedido-en"/>
+    <loc>https://restazumar.com/pedido</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://restazumar.com/pedido"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://restazumar.com/pedido-en"/>
   </url>
   <url>
-    <loc>https://menu-azu-mar.vercel.app/pedido-en</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://menu-azu-mar.vercel.app/pedido"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://menu-azu-mar.vercel.app/pedido-en"/>
+    <loc>https://restazumar.com/pedido-en</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://restazumar.com/pedido"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://restazumar.com/pedido-en"/>
   </url>
   <url>
-    <loc>https://menu-azu-mar.vercel.app/legal</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://menu-azu-mar.vercel.app/legal"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://menu-azu-mar.vercel.app/legal-en"/>
+    <loc>https://restazumar.com/legal</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://restazumar.com/legal"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://restazumar.com/legal-en"/>
   </url>
   <url>
-    <loc>https://menu-azu-mar.vercel.app/legal-en</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://menu-azu-mar.vercel.app/legal"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://menu-azu-mar.vercel.app/legal-en"/>
+    <loc>https://restazumar.com/legal-en</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://restazumar.com/legal"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://restazumar.com/legal-en"/>
   </url>
 </urlset>

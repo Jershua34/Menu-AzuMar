@@ -12,7 +12,7 @@ def traducir(src, dst, pares):
         s = s.replace(a, b)
     open(dst, "w", encoding="utf-8", newline="\n").write(s)
 
-M = "https://menu-azu-mar.vercel.app/"
+M = "https://restazumar.com/"
 comunes = [
     ('<html lang="es-CR">', '<html lang="en">'),
     ('href="pedido.html"', 'href="pedido-en.html"'),
@@ -71,7 +71,7 @@ inicio = [
     ('<figcaption>Hamburguesa Clásica</figcaption>', '<figcaption>Classic Burger</figcaption>'),
     ('<figcaption>Filete en Salsa de Maracuyá</figcaption>', '<figcaption>Fillet in Passion Fruit Sauce</figcaption>'),
     ('<span class="solo-lector"> (abre en otra pestaña)</span>', '<span class="solo-lector"> (opens in a new tab)</span>'),
-    ('<title>AzuMar · Restaurante y Marisquería en Quepos, Costa Rica</title>', '<title>AzuMar · Seafood Restaurant in Quepos, Costa Rica</title>'),
+    ('<title>Azumar Restaurante & Marisquería | Quepos, Costa Rica</title>', '<title>Azumar Restaurant & Seafood | Quepos, Costa Rica</title>'),
     ('content="Mariscos, cortes de carne y cocina tica en Quepos. Abierto todos los días de 2 pm a 11 pm, con servicio a domicilio."', 'content="Seafood, steaks and Costa Rican cooking in Quepos. Open every day from 2 pm to 11 pm, with home delivery."'),
     ('<meta property="og:locale" content="es_CR">', '<meta property="og:locale" content="en_US">'),
     ('<meta property="og:title" content="AzuMar · Del mar a tu mesa">', '<meta property="og:title" content="AzuMar · From the sea to your table">'),
@@ -147,7 +147,7 @@ inicio = [
 traducir("index.html", "en.html", comunes + inicio)
 
 carta = [
-    ('<title>La carta · AzuMar, Restaurante y Marisquería en Quepos</title>', '<title>Menu · AzuMar Seafood Restaurant in Quepos</title>'),
+    ('<title>Menú Azumar | Carta de mariscos y cortes en Quepos</title>', '<title>Azumar Menu | Seafood and steaks in Quepos</title>'),
     ('content="Carta completa de AzuMar en Quepos: ceviches, mariscos, arroces, cortes, pastas, casados y bebidas de la casa. Precios con impuestos incluidos."', 'content="Full menu of AzuMar in Quepos: ceviche, seafood, rice dishes, steaks, pasta, casados and house drinks. Prices include taxes."'),
     ('<meta property="og:title" content="La carta de AzuMar">', '<meta property="og:title" content="The AzuMar menu">'),
     ('content="Restaurante y Marisquería en Quepos, Costa Rica. Precios con impuestos incluidos."', 'content="Seafood restaurant in Quepos, Costa Rica. Prices include taxes."'),
